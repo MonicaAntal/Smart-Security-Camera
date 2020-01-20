@@ -1,10 +1,10 @@
 import cv2
-from imutils.video.pivideostream import PiVideoStream
 import imutils
+from imutils.video.pivideostream import PiVideoStream
 import time
 import numpy as np
 
-class VideoCamera(object):
+class PiCamera(object):
     def __init__(self, flip = False):
         self.vs = PiVideoStream().start()
         self.flip = flip
@@ -45,5 +45,6 @@ class VideoCamera(object):
 
         ret, jpeg = cv2.imencode('.jpg', frame)
         return (jpeg.tobytes(), found_objects)
+
 
 
